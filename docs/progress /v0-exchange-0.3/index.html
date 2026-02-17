@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="stuff/css/style.css">
+    <link rel="shortcut icon" type="stuff/image/png" href="stuff/img/logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Currency Office</title>
+</head>
+  <body id="page">
+    <main class="app">
+      <div class="changebuttons ">
+        <li class="dropdown__item">
+            <div class="change_account_btn hidden">
+              <i class="fab fa-solid fa-gear ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+          <ul class="dropdown__menu ">
+              <li>
+                <button class="dropdown__link dropdown__euro">Euro</button>
+                <button class="dropdown__link dropdown__dolar">Dolar</button> 
+                <button class="dropdown__link dropdown__huf">HUF</button>     
+                <button class="dropdown__link dropdown__tl">TL</button>                    
+              </li> 
+            </ul>
+          </li>
+      </div>
+      <button class="button try_now_btn">
+        Try It Now
+        <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+          <path
+            clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd">
+          </path>
+        </svg>
+      </button>
+ 
+      <div class="balance">
+        <div>
+          <p class="balance__label hidden">Wallet:</p>
+          <p class="balance__value hidden">0</p>
+        </div>
+      </div>
+    <main class="app">
+      <div class="buttons">
+        <button class="btn show-modal_euro hidden">Euro</button>
+        <button class="btn show-modal_dolar  hidden">Dolar</button>
+        <button class="btn show-modal_tl hidden">TL</button>
+        <button class="btn show-modal_huf hidden">HUF</button>
+        <button class="btn show-modal_request hidden">Request</button>
+      </div>
+      <div class="modal_request hidden" >
+        <button class="close-modal_request">&times;</button>
+        <h1 class="h1s">Request</h1>
+          <div class="tooltip">
+            <h2><i id="fab" class="fab fas fa-circle-info fa-2x"></i></h2>
+            <span class="tooltip-text">
+              You Can Withdraw As Much Money As You Want From This Compartment To Your Currently Active Account
+            </span>
+          </div>
+            <input  class="form__input form__input--amount" />
+            <button class="pay-btn form__btn request">
+              <span class="btn-text">Request Now</span>
+              <div class="icon-container">
+                <svg viewBox="0 0 24 24" class="icon card-icon">
+                  <path
+                    d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <svg viewBox="0 0 24 24" class="icon payment-icon">
+                  <path
+                    d="M2,17H22V21H2V17M6.25,7H9V6H6V3H18V6H15V7H17.75L19,17H5L6.25,7M9,10H15V8H9V10M9,13H15V11H9V13Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <svg viewBox="0 0 24 24" class="icon dollar-icon">
+                  <path
+                    d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+            
+                <svg viewBox="0 0 24 24" class="icon wallet-icon default-icon">
+                  <path
+                    d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>   
+      </div>
+      <div>
+        <div class="modal_euro hidden">
+        <button class="close-modal_euro">&times;</button>
+        <h1 class="h1s">Convert Your Money To Euro</h1>
+        <div class="tooltip">
+          <h2><i id="fab" class="fab fas fa-circle-info fa-2x"></i></h2>
+          <span class="tooltip-text">
+            EURO <br>TL: 40 <br>HUF: 450<br>DOLAR: 1
+          </span>
+        </div>
+        <input  class="form__input form_input--euro" />
+        <button class="pay-btn form__btn form__btn--euro-ch">
+          <span class="btn-text">Convert Now</span>
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" class="icon card-icon">
+              <path
+                d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon payment-icon">
+              <path
+                d="M2,17H22V21H2V17M6.25,7H9V6H6V3H18V6H15V7H17.75L19,17H5L6.25,7M9,10H15V8H9V10M9,13H15V11H9V13Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon dollar-icon">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                fill="currentColor"
+              ></path>
+            </svg>
+        
+            <svg viewBox="0 0 24 24" class="icon wallet-icon default-icon">
+              <path
+                d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button> 
+      </div>
+      <div>
+        <div class="modal_dolar hidden">
+        <button class="close-modal_dolar">&times;</button>
+        <h1 class="h1s">Convert Your Money To Dolar</h1>
+        <div class="tooltip">
+          <h2><i id="fab" class="fab fas fa-circle-info fa-2x"></i></h2>
+          <span class="tooltip-text">
+            DOLAR <br>TL: 40 <br>HUF: 450<br>EURO: 1
+          </span>
+        </div>
+        <input  class="form__input form_input--dolar" />
+        <button class="pay-btn form__btn form__btn--dolar-ch">
+          <span class="btn-text">Convert Now</span>
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" class="icon card-icon">
+              <path
+                d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon payment-icon">
+              <path
+                d="M2,17H22V21H2V17M6.25,7H9V6H6V3H18V6H15V7H17.75L19,17H5L6.25,7M9,10H15V8H9V10M9,13H15V11H9V13Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon dollar-icon">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                fill="currentColor"
+              ></path>
+            </svg>
+        
+            <svg viewBox="0 0 24 24" class="icon wallet-icon default-icon">
+              <path
+                d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button> 
+      </div>
+      <div>
+        <div class="modal_tl hidden">
+        <button class="close-modal_tl">&times;</button>
+        <h1 class="h1s">Convert Your Money To TL</h1>
+        <div class="tooltip">
+          <h2><i id="fab" class="fab fas fa-circle-info fa-2x"></i></h2>
+          <span class="tooltip-text">
+            TL <br>EURO: 0,025 <br>HUF: 10<br>EURO: 0,025
+          </span>
+        </div>
+        <input  class="form__input form_input--tl" />
+        <button class="pay-btn form__btn form__btn--tl-ch">
+          <span class="btn-text">Pay Now</span>
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" class="icon card-icon">
+              <path
+                d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon payment-icon">
+              <path
+                d="M2,17H22V21H2V17M6.25,7H9V6H6V3H18V6H15V7H17.75L19,17H5L6.25,7M9,10H15V8H9V10M9,13H15V11H9V13Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon dollar-icon">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                fill="currentColor"
+              ></path>
+            </svg>
+        
+            <svg viewBox="0 0 24 24" class="icon wallet-icon default-icon">
+              <path
+                d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button> 
+      </div>
+      <div>
+        <div class="modal_huf hidden">
+        <button class="close-modal_huf">&times;</button>
+        <h1 class="h1s">Convert Your Money To HUF</h1>
+        <div class="tooltip">
+          <h2><i id="fab" class="fab fas fa-circle-info fa-2x"></i></h2>
+          <span class="tooltip-text">
+            HUF <br>EURO: 0,0025 <br>TL: 0,1<br>DOLAR: 0,0025
+          </span>
+        </div>
+        <input  class="form__input form_input--huf" />
+        <button class="pay-btn form__btn form__btn--huf-ch">
+          <span class="btn-text">Pay Now</span>
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" class="icon card-icon">
+              <path
+                d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon payment-icon">
+              <path
+                d="M2,17H22V21H2V17M6.25,7H9V6H6V3H18V6H15V7H17.75L19,17H5L6.25,7M9,10H15V8H9V10M9,13H15V11H9V13Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg viewBox="0 0 24 24" class="icon dollar-icon">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                fill="currentColor"
+              ></path>
+            </svg>
+        
+            <svg viewBox="0 0 24 24" class="icon wallet-icon default-icon">
+              <path
+                d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button> 
+      </div> 
+ <!-- footer -->
+ <footer id="main-footer">
+    <div class="footer-content container">
+        <p>CopyRight &copy; 2025.All Right Reserved.</p>
+        
+        <div class="social">
+            <a href="https://github.com/cntzemir" target="_blank">
+                <i class="fab fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.youtube.com/@emirrrrw" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/emircntz/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/emircntz" target="_blank">
+                <i class="fab fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+ </footer>
+     <script type="module" src="stuff/js/script.js"></script>
+  </body>
+  <div class="overlay hidden"></div>
+</html>
