@@ -1,30 +1,76 @@
-# JavaScript Exchange
+# JavaScript Exchange (Vanilla JS)
 
-A **currency exchange practice app** built with **Vanilla JavaScript**.  
-This project started as an early prototype and was later **refactored** to improve structure, correctness, and UX — focusing on clean state management, validation, and a more “product-like” UI.
+A lightweight currency exchange practice app with **wallet balances**, a **base-currency conversion model**, and a **refactored UI** focused on clean structure and predictable behavior.
+
+**Why this repo exists:** It showcases my progression from early prototypes to a more production-minded approach (state management, validation, UI consistency, and maintainability).
+
+---
 
 ## Live Demo
 - Demo: https://cntzemir.github.io/javascript-exchange/
 
+---
+
 ## Screenshots
-![Exchange UI](docs/screenshots/exchange-ui.png)
-![Convert Flow](docs/screenshots/convert.png)
-![Request Money Flow](docs/screenshots/request-money.png)
-![Example Exchange](docs/screenshots/example-exchange.png)
+
+### Quick Preview
+<table>
+  <tr>
+    <td align="center"><b>Dashboard</b></td>
+    <td align="center"><b>Convert Flow</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/exchange-ui.png" width="420" /></td>
+    <td><img src="docs/screenshots/convert.png" width="420" /></td>
+  </tr>
+</table>
+
+<details>
+  <summary><b>More screenshots</b></summary>
+  <br/>
+  <table>
+    <tr>
+      <td align="center"><b>Request Money</b></td>
+      <td align="center"><b>Example Exchange</b></td>
+    </tr>
+    <tr>
+      <td><img src="docs/screenshots/request-money.png" width="420" /></td>
+      <td><img src="docs/screenshots/example-exchange.png" width="420" /></td>
+    </tr>
+  </table>
+</details>
+
+---
 
 ## Key Features
-- Wallet balances overview (dashboard-style UI)
-- Convert between currencies using a **base-currency conversion model**
-- Request money flow inside the same modal system
-- Input validation with **inline error messages** (no `alert()` UX)
-- Keyboard shortcuts (polished interactions)
-  - `Enter` submit
-  - `Esc` close modal
+
+### Product-like UI
+- Wallet balances overview (dashboard-style)
+- Single modal component with **mode switching** (Convert / Request)
+- Inline error feedback (no disruptive `alert()` UX)
+
+### Conversion Logic
+- Base-currency model (rates defined relative to a base)
+- Single conversion function (testable and scalable)
+- Prevents “if/else combination explosion”
+
+### Validation & Edge Cases
+- Input validation (amount, currency selections)
+- Clear error messages inside the modal
+- Predictable behavior on invalid actions
+
+### Keyboard Shortcuts
+- `Enter` → submit (when modal is open)
+- `Esc` → close modal
+
+---
 
 ## Tech Stack
 - HTML
 - CSS
 - JavaScript (Vanilla)
+
+---
 
 ## Project Structure
 ```text
