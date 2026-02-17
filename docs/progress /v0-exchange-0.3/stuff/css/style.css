@@ -1,0 +1,732 @@
+/*
+ * Use this CSS to learn some intersting techniques,
+ * in case you're wondering how I built the UI.
+ * Have fun! 😁
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  list-style-type: none;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+.try_now_btn {
+  top: 170px;
+  left: 1425px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: #444;
+  background-color: #333;
+  height: 100vh;
+  padding: 2rem;
+  cursor: url("image.png"), auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: relative;
+}
+.welcome {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: white;
+}
+.logo {
+  height: 5.25rem;
+}
+/* MAIN */
+.app {
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 1rem;
+
+  /* NOTE This creates the fade in/out anumation */
+}
+.balance,
+.buttons {
+  margin-left: 786px;
+  margin-top: 200px;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.balance__label {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  top: 360px;
+  left: 740px;
+}
+:root {
+  --currency-symbol: "€";
+  --currency-text: "Euro";
+}
+.balance__label::after {
+  content: var(--currency-text);
+  background-color: rgba(0, 173, 179, 0.1);
+  border-radius: 50px;
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 500;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -40px;
+  left: -5px;
+}
+.balance__value {
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  position: absolute;
+  top: 355px;
+  left: 830px;
+}
+.balance__value::after {
+  content: var(--currency-symbol);
+
+  color: white;
+  border-radius: 50px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -2px;
+  left: -35px;
+}
+.show-modal_request {
+  background-color: rgb(0, 69, 116) !important;
+  margin-top: 60px;
+  padding: 20px 60px !important;
+}
+.btn {
+  padding: 15px 30px;
+  border: 2px solid rgb(0, 69, 116, 0.5);
+  background-color: rgb(0, 173, 179);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.btn:hover::after {
+  transform: scale(4);
+}
+
+.btn:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+/*
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+*/
+
+.btn_settings {
+  position: relative;
+  border: none;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 8px;
+  float: left;
+  margin-left: 100px;
+}
+
+.btn_settings:after {
+  content: "";
+  background: white;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.btn_settings:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.modal_select_title {
+  text-align: center;
+}
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+/*Welcome*/
+.welcome_select {
+  align-items: center;
+}
+/*Form*/
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  word-spacing: 2px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  font-family: "Prompt", sans-serif;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.31);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 150%; /* Yukarıda durmasını sağlar */
+  left: 50%;
+  transform: translateX(-55%) translateY(-170%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Exceptions for interst */
+.form.form--loan {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+.form__label--loan {
+  grid-row: 2;
+}
+/* End exceptions */
+
+.form__input {
+  position: relative;
+  right: -240px;
+  width: 150px;
+
+  border: none;
+  background-color: rgb(127, 127, 127);
+  font-family: inherit;
+  font-size: 3rem;
+  text-align: center;
+  color: #111;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(127, 127, 127, 0.551);
+}
+
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+#main-footer {
+  position: fixed;
+  top: 95.4%;
+  right: 0.1rem;
+  background: rgb(0 107 179);
+  color: #fff;
+  width: 100%;
+  height: 5rem;
+}
+#main-footer .footer-content {
+  top: 80%;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+#main-footer .footer-content .social .fab {
+  margin-right: 0.5rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.6rem;
+  transition: all 1s;
+}
+#main-footer .footer-content .social .fab:hover {
+  background-color: #111;
+}
+/* .form__btn {
+  margin-left: 555px;
+  margin-top: 25px;
+  border: 1px 1px black;
+  border-radius: 5rem;
+  font-size: 30px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+} */
+
+/*---------*/
+.pay-btn {
+  position: relative;
+  margin-top: 20px;
+  right: -230px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  color: #22c55e;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.default-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover animations */
+.pay-btn:hover .icon {
+  animation: none;
+}
+
+.pay-btn:hover .wallet-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pay-btn:hover .card-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0s;
+}
+
+.pay-btn:hover .payment-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.pay-btn:hover .dollar-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1s;
+}
+
+.pay-btn:hover .check-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1.5s;
+}
+
+/* Active state - show only checkmark */
+.pay-btn:active .icon {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.pay-btn:active .check-icon {
+  animation: checkmarkAppear 0.6s ease forwards;
+  visibility: visible;
+}
+
+.btn-text {
+  font-weight: 600;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.5);
+  }
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
+  }
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Change */
+.changebuttons {
+  padding: 10px;
+}
+
+@keyframes whiteBackground {
+  0% {
+    background-color: var(--black-color-light);
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+.dropdown__item {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-size: 27px;
+  top: 200px;
+  left: 980px;
+}
+
+.dropdown__arrow {
+  transition: transform 0.6s;
+}
+
+.dropdown__menu {
+  display: flex; /* Elemanları yatay hizalar */
+  position: absolute;
+  top: 0;
+  right: 100%; /* Menü sağdan açılacak */
+  background-color: var(--black-color-light);
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  max-width: 0; /* Başlangıçta gizli */
+  overflow: hidden;
+  transition: max-width 0.4s ease-in;
+  list-style: none;
+  gap: 10px; /* Elemanlar arasında boşluk bırakır */
+}
+
+.dropdown__menu li {
+  display: flex; /* Liste elemanlarını hizalamak için */
+}
+
+.dropdown__link {
+  padding: 1rem 1.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  font-weight: var(--font-semi-bold);
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block; /* Elemanların yan yana gelmesini sağlar */
+  margin-right: 0.5rem;
+  border-radius: 50px;
+}
+
+.dropdown__link:hover {
+  animation: whiteBackground 0.4s forwards;
+  color: var(--black-color);
+}
+
+.dropdown__item:hover .dropdown__menu {
+  max-width: 600px; /* Açıldığında yeterli genişlik sağlanır */
+  transition: max-width 0.6s ease-in;
+}
+
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*Button's*/
+.modal_euro,
+.modal_dolar,
+.modal_tl,
+.modal_huf,
+.modal_request,
+.modal_select {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: rgb(88, 88, 88);
+  padding: 6rem;
+  border-radius: 50px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1.5px);
+  z-index: 5;
+}
+
+.show-modal_euro,
+.show-modal_dolar,
+.show-modal_tl,
+.show-modal_huf,
+.show-modal_reques {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.close-modal_euro,
+.close-modal_dolar,
+.close-modal_tl,
+.close-modal_huf,
+.close-modal_request {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 9rem;
+  color: #222;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.h1s {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#fab {
+  position: absolute;
+  bottom: 90px;
+  right: 5px;
+}
+#page {
+  background: url("../img/page.png") no-repeat center right/cover;
+  height: 100vh;
+  color: #111;
+}
+#page .header-content {
+  text-align: center;
+  padding-top: 10%;
+}
+#page h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+#page .typewrite {
+  display: block;
+}
+
+.button {
+  top: 450px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 1rem;
+  padding-inline: 4rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+/*------------*/
+#main-footer .footer-content .social .fab {
+  margin-right: 1rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.6rem;
+  transition: all 1s;
+}
+#main-footer .footer-content .social .fab:hover {
+  background-color: #111;
+}
