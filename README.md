@@ -17,7 +17,7 @@ A lightweight currency exchange practice app with **wallet balances**, a **base-
 <table>
   <tr>
     <td align="center"><b>Dashboard</b></td>
-    <td align="center"><b>Convert Flow</b></td>
+    <td align="center"><b>Example Exchange</b></td>
   </tr>
   <tr>
     <td><img src="docs/screenshots/exchange-ui.png" width="420" /></td>
@@ -31,7 +31,7 @@ A lightweight currency exchange practice app with **wallet balances**, a **base-
   <table>
     <tr>
       <td align="center"><b>Request Money</b></td>
-      <td align="center"><b>Example Exchange</b></td>
+      <td align="center"><b>Convert Flow</b></td>
     </tr>
     <tr>
       <td><img src="docs/screenshots/request-money.png" width="420" /></td>
