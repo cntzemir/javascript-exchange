@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Office</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div>
+        <h1 class="title">Currency Exchange Office</h1>
+        <p class="subtitle">Simple wallet + conversion flow (sample rates)</p>
+      </div>
+
+      <button class="ghost-btn" id="btnTry" type="button">
+        Try it now
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card__top">
+        <div class="tabs" id="currencyTabs" aria-label="Select active wallet currency">
+          <button class="tab is-active" type="button" data-currency="EUR">EUR</button>
+          <button class="tab" type="button" data-currency="USD">USD</button>
+          <button class="tab" type="button" data-currency="HUF">HUF</button>
+          <button class="tab" type="button" data-currency="TRY">TRY</button>
+        </div>
+
+        <div class="rate-chip" id="rateChip">Sample rates</div>
+      </div>
+
+      <div class="wallet">
+        <div class="wallet__label">Active wallet</div>
+        <div class="wallet__value">
+          <span class="wallet__symbol" id="activeSymbol">€</span>
+          <span class="wallet__amount" id="activeAmount">0.00</span>
+          <span class="wallet__code" id="activeCode">EUR</span>
+        </div>
+        <div class="wallet__hint" id="statusText">Click “Try it now” to enable actions.</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="btnConvert" type="button" disabled>
+          <i class="fa-solid fa-right-left"></i>
+          Convert
+        </button>
+        <button class="btn btn--secondary" id="btnRequest" type="button" disabled>
+          <i class="fa-solid fa-circle-plus"></i>
+          Request
+        </button>
+      </div>
+
+      <div class="balances">
+        <div class="balances__title">Balances</div>
+        <div class="balances__grid" id="balancesGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="overlay is-hidden" id="overlay"></div>
+
+  <section class="modal is-hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__header">
+      <h2 class="modal__title" id="modalTitle">Action</h2>
+      <button class="icon-btn" id="btnClose" type="button" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="modal__body">
+      <label class="field">
+        <span class="field__label" id="amountLabel">Amount</span>
+        <input class="field__input" id="amountInput" inputmode="decimal" placeholder="0.00" />
+      </label>
+
+      <label class="field" id="toField">
+        <span class="field__label">Convert to</span>
+        <select class="field__select" id="toSelect">
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+          <option value="HUF">HUF</option>
+          <option value="TRY">TRY</option>
+        </select>
+      </label>
+
+      <div class="error is-hidden" id="errorBox"></div>
+
+      <button class="btn btn--primary" id="btnSubmit" type="button">Submit</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Emir Canitez. All rights reserved.</p>
+      <div class="social">
+        <a href="https://github.com/cntzemir" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/emircntz" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
